@@ -7,3 +7,7 @@
 - systray
 
 他は一切不要。
+
+ただし ``makepkg`` でビルドした段階で .PKGINFO に大量の不要な依存を打ち込んでくる。
+どうしても止められない
+``/var/lib/pacman/local/ore-waybar-/desc`` を直接修正することにする。
