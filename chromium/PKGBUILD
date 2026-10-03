@@ -1,0 +1,64 @@
+# 気が向いたときに
+# https://download-chromium.appspot.com/ 
+# から取ってくる
+pkgname=chromium
+pkgver=99999.1.1
+pkgrel=3
+pkgdesc='chromium'
+arch=('x86_64')
+license=('MIT')
+depends=(
+  'alsa-lib'
+  'at-spi2-core'
+  'cairo'
+  'dbus'
+  'desktop-file-utils'
+  'expat'
+  'glib2'
+  'glibc'
+  'gtk3'
+  'hicolor-icon-theme'
+  'libffi'
+  'libgcc'
+  'libgcrypt'
+  'libpulse'
+  'libstdc++'
+  'libva'
+  'libx11'
+  'libxcb'
+  'libxcomposite'
+  'libxdamage'
+  'libxext'
+  'libxfixes'
+  'libxkbcommon'
+  'libxrandr'
+  'libxss'
+  'mesa'
+  'nspr'
+  'nss'
+  'pango'
+  'pciutils'
+  'systemd'
+  'systemd-libs'
+  'ttf-liberation'
+  'xdg-utils'
+  'zlib'
+)
+makedepends=(
+)
+source=(
+  "chrome-linux.zip"
+)
+sha256sums=('SKIP')
+
+prepare(){
+  :
+}
+
+package(){
+  install -d "$pkgdir/opt/chromium"
+  cp -r chrome-linux/* "$pkgdir/opt/chromium/"
+  
+  install -d "$pkgdir/usr/bin"
+  ln -s /opt/chromium/chrome "$pkgdir/usr/bin/chromium"
+}

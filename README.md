@@ -5,3 +5,13 @@
 
 - 依存性は一旦全部コメントアウト
 - ビルドでエラー、実行時に不足、などあれば、そのときに追加
+
+# todo
+
+- gssdp
+- gupnp
+- gupnp-igs
+- libnice
+- dtls
+- srtp
+

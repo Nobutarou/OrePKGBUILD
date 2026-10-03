@@ -1,3 +1,4 @@
 - Jack を消す
 - "-O2" でビルドする
-- pacman -Syu に上書きさせない
+
+~/.makepkg.conf に !autodeps が効いてるみたい。

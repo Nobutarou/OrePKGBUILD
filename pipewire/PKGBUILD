@@ -43,6 +43,15 @@ replaces=(
   'pipewire-pulse'
   'libpipewire'
 )
+provides=(
+  "gstreamer=$pkgver"
+  "gst-plugins-bad-libs=$pkgver"
+  "gst-plugins-base-libs=$pkgver"
+  "gst-plugins-base=$pkgver"
+  "gst-plugins-good=$pkgver"
+  "gst-plugins-bad=$pkgver"
+  "gst-plugins-ugly=$pkgver"
+)
 
 prepare() {
   :
