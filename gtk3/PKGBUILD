@@ -1,8 +1,15 @@
+# 1
 # cups 外す
 # ついでに外れることになったもの
 # 依存性エラーとか、ビルド時のエラーとかで
 # - introspection
 # - man
+
+# 2
+# tinysparql kill
+# tracker3 という名前のものがそうらしい
+# cups の亡霊が出てきた
+# print_backend
 
 pkgbase=gtk3
 pkgname=(
@@ -52,7 +59,7 @@ depends=(
   libxrender
   pango
   shared-mime-info
-  tinysparql
+#  tinysparql
   wayland
   zlib
 )
@@ -102,7 +109,8 @@ build() {
     -D gtk_doc=false
     -D introspection=false
     -D man=false
-    -D tracker3=true
+    -D tracker3=false
+    -D print_backends='file'
   )
 
   cd "$srcdir/gtk-$_true_pkgver"
