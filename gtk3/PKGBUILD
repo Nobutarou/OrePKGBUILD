@@ -4,9 +4,6 @@
 # 依存性エラーとか、ビルド時のエラーとかで
 # - introspection
 # - man
-#
-# なお introspection がないと howdy-gtk は動作しない
-# まあ howdy 本体が動けばいいか。
 
 # 2
 # tinysparql kill
@@ -14,6 +11,8 @@
 # cups の亡霊が出てきた
 # print_backend
 
+# 3
+# introspection 戻す
 pkgbase=gtk3
 pkgname=(
   gtk3
