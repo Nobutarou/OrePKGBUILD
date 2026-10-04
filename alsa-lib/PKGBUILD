@@ -1,0 +1,48 @@
+# 1, alsa-topology-conf 消す
+# 
+
+pkgname=alsa-lib
+pkgver=100.0.0.0
+_true_pkgver=1.2.16.1
+pkgrel=1
+pkgdesc="An alternative implementation of Linux sound support"
+arch=(x86_64)
+url="https://www.alsa-project.org"
+license=(LGPL-2.1-or-later)
+depends=(
+#  alsa-topology-conf
+  alsa-ucm-conf
+  glibc
+)
+provides=(
+  libasound.so
+  libatopology.so
+)
+install=$pkgname.install
+source=(
+  $url/files/pub/lib/$pkgname-$_true_pkgver.tar.bz2
+)
+sha512sums=('2ddc5eef7fafe73ba6d8e4f79640a5aaa6e27aac2c77075fda9ee8ae61727bddfcda661e257057d8cf2f1647897d33153703f9ba913574ae7f1fbec53db3fa22')
+
+
+prepare() {
+  :
+  #cd $pkgname-$_true_pkgver
+  #autoreconf -fiv
+}
+
+build() {
+  # -flto=auto is not supported: https://github.com/alsa-project/alsa-lib/issues/110
+  CFLAGS="-O2"
+  CXXFLAGS="-O2"
+  cd $pkgname-$_true_pkgver
+  ./configure --prefix=/usr --without-debug
+  # prevent excessive overlinking due to libtool
+  #sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  make DESTDIR="$pkgdir" install -C $pkgname-$_true_pkgver
+  install -vDm 644 $pkgname-$_true_pkgver/{MEMORY-LEAK,TODO,NOTES,ChangeLog,doc/asoundrc.txt} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
