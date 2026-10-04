@@ -400,8 +400,12 @@ _install() {
 package() {
   set -x
   cd gstreamer
-  meson install -C build --destdir "$srcdir/root"
+  meson install -C build --destdir "$pkgdir"
   cd -
+  # libglvnd と被るので。
+  # Gemini 曰く、libglvnd が本家とのことで
+  rm -f "$pkgdir/usr/include/GL/glext.h"
+  rm -f "$pkgdir/usr/include/KHR/khrplatform.h"
 }
 
 #package_gstreamer() {
