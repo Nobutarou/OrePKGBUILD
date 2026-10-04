@@ -12,7 +12,7 @@
 # print_backend
 
 # 3
-# introspection 戻す
+# introspection 戻す。Ruby などが使う関数の仕様書であり、なにか監視するような物ではい
 pkgbase=gtk3
 pkgname=(
   gtk3
@@ -68,7 +68,7 @@ depends=(
 makedepends=(
   git
   glib2-devel
-#  gobject-introspection
+  gobject-introspection
 #  gtk-doc
   hicolor-icon-theme
   meson
@@ -109,7 +109,7 @@ build() {
     -D cloudproviders=true
     -D colord=yes
     -D gtk_doc=false
-    -D introspection=false
+    -D introspection=true
     -D man=false
     -D tracker3=false
     -D print_backends='file'
