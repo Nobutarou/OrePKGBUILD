@@ -44,6 +44,10 @@
 # - zxing-cpp
 # - svt-hevc
 # - lto あほか
+
+# 2, depends 追加
+# 自分で消したんだっけ？
+# とりあえず makedepends と同じにしておく
 pkgbase=gstreamer
 pkgname=gstreamer
 conflicts=(
@@ -118,6 +122,133 @@ pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
+depends=(
+  a52dec
+  alsa-lib
+  aom
+  bluez-libs
+  bzip2
+  cairo
+  cdparanoia
+  curl
+  faad2
+  ffmpeg
+  flac
+  gdk-pixbuf2
+  git
+  glib2
+  glib2-devel
+  glibc
+  graphene
+  gsm
+  gtk3
+  hicolor-icon-theme
+  imath
+  iso-codes
+  json-glib
+  ladspa
+  lame
+  lcms2
+  libass
+  libavc1394
+  libbs2b
+  libcap
+  libdc1394
+  libde265
+  libdrm
+  libdvdnav
+  libdvdread
+  libelf
+  libfdk-aac
+  libgcc
+  libglvnd
+  libgudev
+  libiec61883
+  libjpeg-turbo
+  libmodplug
+  libogg
+  libopenmpt
+  libpng
+  libpulse
+  libraw1394
+  librsvg
+  libshout
+  libsndfile
+  libsoup3
+  libsrtp
+  libstdc++
+  libtheora
+  libunwind
+  libusb
+  libva
+  libvorbis
+  libvpl
+  libvpx
+  libwebp
+  libx11
+  libxcb
+  libxdamage
+  libxext
+  libxfixes
+  libxi
+  libxkbcommon
+  libxkbcommon-x11
+  libxml2
+  libxrandr
+  libxtst
+  libxv
+  mesa
+  meson
+  mpg123
+  nasm
+  nettle
+  openal
+  opencore-amr
+  opencv
+  openexr
+  openh264
+  openjpeg2
+  openssl
+  opus
+  orc
+  pango
+  python
+  python-cairo
+  python-gobject
+  python-lxml
+  python-setuptools
+  python-typing_extensions
+  qrencode
+  qt5-base
+  qt5-declarative
+  qt5-wayland
+  qt5-x11extras
+  qt6-base
+  qt6-declarative
+  qt6-shadertools
+  qt6-tools
+  rust
+  sbc
+  sdl2
+  shaderc
+  spandsp
+  speex
+  srt
+  svt-av1
+  systemd-libs
+  taglib
+  twolame
+  v4l-utils
+  vmaf
+  vulkan-headers
+  vulkan-icd-loader
+  wayland
+  wayland-protocols
+  x264
+  x265
+  zbar
+  zlib
+)
 makedepends=(
   a52dec
 #  aalib
