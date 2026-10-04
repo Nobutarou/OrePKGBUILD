@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.flatpak.Authenticator.test
-Exec=@libexecdir@/test-authenticator
