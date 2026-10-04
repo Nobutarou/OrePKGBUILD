@@ -4,6 +4,9 @@
 # 依存性エラーとか、ビルド時のエラーとかで
 # - introspection
 # - man
+#
+# なお introspection がないと howdy-gtk は動作しない
+# まあ howdy 本体が動けばいいか。
 
 # 2
 # tinysparql kill
