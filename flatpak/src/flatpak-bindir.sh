@@ -1,0 +1,1 @@
+/home/snob/github/nobutarou/OrePKGBUILD/flatpak/flatpak-bindir.sh
