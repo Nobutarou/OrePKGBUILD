@@ -1,0 +1,45 @@
+pkgname=linuxcampam
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="LinuxCamPam"
+arch=('x86_64')
+url="https://github.com/Vladush/LinuxCamPAM"
+license=('MIT')
+depends=(
+)
+makedepends=(
+)
+optdepends=(
+)
+# src/$pkgname に展開
+source=("${pkgname}::git+https://github.com/Vladush/LinuxCamPAM.git")
+
+sha256sums=('SKIP')
+
+prepare() {
+  :
+}
+
+build() {
+  set -x
+  # makepkg が勝手に何かを与えてエラーになる
+  CPPFLAGS=""
+  CFLAGS=""
+  CXXFLAGS=""
+  cmake -B build -S $pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=MinSizeRel \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib 
+
+  cmake --build build
+}
+
+package() {
+  set -x
+#  pwd
+#  ls
+#  read
+  DESTDIR=$pkgdir cmake --install build
+  cd $pkgdir
+  mv -v lib/* usr/lib/
+}
